@@ -1,0 +1,13 @@
+{
+  "itemGroup.starlighttreeexpansion": "Example Mod Tab",
+  "block.starlighttreeexpansion.example_block": "Example Block",
+  "item.starlighttreeexpansion.example_item": "Example Item",
+
+  "starlighttreeexpansion.configuration.title": "Starlight Tree Expansion Configs",
+  "starlighttreeexpansion.configuration.section.starlighttreeexpansion.common.toml": "Starlight Tree Expansion Configs",
+  "starlighttreeexpansion.configuration.section.starlighttreeexpansion.common.toml.title": "Starlight Tree Expansion Configs",
+  "starlighttreeexpansion.configuration.items": "Item List",
+  "starlighttreeexpansion.configuration.logDirtBlock": "Log Dirt Block",
+  "starlighttreeexpansion.configuration.magicNumberIntroduction": "Magic Number Text",
+  "starlighttreeexpansion.configuration.magicNumber": "Magic Number"
+}
