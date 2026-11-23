@@ -3,6 +3,7 @@ package com.starlight.starlighttreeexpansion.entity.custom;
 import com.starlight.starlighttreeexpansion.StarlightTreeExpansion;
 import com.starlight.starlighttreeexpansion.block.ModBlocks;
 import com.starlight.starlighttreeexpansion.item.ModItems;
+import com.starlight.starlighttreeexpansion.item.custom.SeedItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
@@ -81,42 +82,17 @@ public class SeedItemEntity extends ItemEntity
     {
         super.checkSupportingBlock(pOnGround, pMovement);
 
-        StarlightTreeExpansion.LOGGER.atInfo().log("check supporting block");
         //is on ground
         //is ground a dirt/grass block?
         //plant tree seedling/sapling block
         if(onGround())
         {
-            StarlightTreeExpansion.LOGGER.atInfo().log("->on ground");
-
-            StarlightTreeExpansion.LOGGER.atInfo().log("->on ground");
             BlockPos pos = this.getOnPos();
             BlockState state = this.level().getBlockState(pos);
-            if((
-                    state.is(BlockTags.DIRT)
-                    ||
-                    state.is(BlockTags.GRASS_BLOCKS)
-                    ||
-                    state.is(Blocks.FARMLAND)
-            )
-            &&
-            this.level().getBlockState(pos.above()).is(Blocks.AIR))
-            {
-                StarlightTreeExpansion.LOGGER.atInfo().log("->->on correct blocks");
-                Block b = SEED_SAPLING_MAP.get(this.getItem().getItem());
 
-                if(b != null)
-                {
-                    StarlightTreeExpansion.LOGGER.atInfo().log("->->->seedling mapped correctly");
-                    this.level().setBlockAndUpdate(this.getOnPos().above(1), b.defaultBlockState());
-
-                    if(this.level() instanceof ServerLevel serverLevel)
-                        this.kill(serverLevel);
-                }
-            }
-            else
+            if(((SeedItem)this.getItem().getItem()).attemptSeedPlanting(pos, level(), state))
             {
-                StarlightTreeExpansion.LOGGER.atInfo().log("->->NOT on correct blocks" + state);
+                this.remove(RemovalReason.KILLED);
             }
         }
     }
