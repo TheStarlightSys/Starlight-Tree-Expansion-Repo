@@ -2,7 +2,9 @@
   "required": true,
   "package": "com.starlight.starlighttreeexpansion.mixin",
   "compatibilityLevel": "JAVA_25",
-  "mixins": [],
+  "mixins": [
+    "LeavesBlockMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },
