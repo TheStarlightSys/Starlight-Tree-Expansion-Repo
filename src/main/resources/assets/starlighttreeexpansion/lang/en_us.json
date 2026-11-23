@@ -9,5 +9,54 @@
   "starlighttreeexpansion.configuration.items": "Item List",
   "starlighttreeexpansion.configuration.logDirtBlock": "Log Dirt Block",
   "starlighttreeexpansion.configuration.magicNumberIntroduction": "Magic Number Text",
-  "starlighttreeexpansion.configuration.magicNumber": "Magic Number"
+  "starlighttreeexpansion.configuration.magicNumber": "Magic Number",
+
+  "item.starlightmaterials.orange_item": "Orange",
+  "item.starlightmaterials.orange_peel_item": "Orange Peel",
+
+  "item.starlightmaterials.orange_seed": "Orange Seed",
+  "item.starlightmaterials.acorn": "Acorn",
+  "item.starlightmaterials.dark_acorn": "Dark Acorn",
+  "item.starlightmaterials.birch_seed": "Birch Seed",
+  "item.starlightmaterials.birch_catkin": "Birch Catkin",
+  "item.starlightmaterials.acacia_seed": "Acacia Seed",
+  "item.starlightmaterials.acacia_seed_pod": "Acacia Seed Pod",
+  "item.starlightmaterials.cherry_fruit": "Cherries",
+  "item.starlightmaterials.cherry_seed": "Cherry Seed",
+  "item.starlightmaterials.jungle_seed": "Jungle Nut",
+  "item.starlightmaterials.jungle_seed_pod": "Jungle Nutshell",
+  "item.starlightmaterials.spruce_seed": "Spruce Seed",
+  "item.starlightmaterials.spruce_pinecone": "Pinecone",
+  "item.starlightmaterials.apple_seed": "Apple Seed",
+
+  "block.starlightmaterials.acacia_seedling": "Acacia Seedling",
+  "block.starlightmaterials.oak_seedling": "Oak Seedling",
+  "block.starlightmaterials.dark_oak_seedling": "Dark Oak Seedling",
+  "block.starlightmaterials.birch_seedling": "Birch Seedling",
+  "block.starlightmaterials.cherry_seedling": "Cherry Seedling",
+  "block.starlightmaterials.jungle_seedling": "Jungle Seedling",
+  "block.starlightmaterials.spruce_seedling": "Spruce Seedling",
+  "block.starlightmaterials.orange_seedling": "Orange Seedling",
+  "block.starlightmaterials.apple_seedling": "Apple Seedling",
+
+  "block.starlightmaterials.orange_sapling": "Orange Tree Sapling",
+  "block.starlightmaterials.orange_leaves": "Orange Leaves Block",
+  "block.starlightmaterials.fruiting_orange_leaves": "Fruiting Orange Leaves Block",
+  "block.starlightmaterials.orange_log": "Orange Log Block",
+  "block.starlightmaterials.orange_wood": "Orange Wood Block",
+  "block.starlightmaterials.orange_planks": "Orange Wood Planks Block",
+  "block.starlightmaterials.stripped_orange_log": "Stripped Orange Log Block",
+  "block.starlightmaterials.stripped_orange_wood": "Stripped Orange Wood Block",
+
+  "block.starlightmaterials.apple_sapling": "Apple Tree Sapling",
+  "block.starlightmaterials.apple_leaves": "Apple Leaves Block",
+  "block.starlightmaterials.apple_log": "Apple Log Block",
+  "block.starlightmaterials.apple_wood": "Apple Wood Block",
+  "block.starlightmaterials.apple_planks": "Apple Wood Planks Block",
+  "block.starlightmaterials.stripped_apple_log": "Stripped Apple Log Block",
+  "block.starlightmaterials.stripped_apple_wood": "Stripped Apple Wood Block",
+
+  "item.starlightmaterials.wood_handaxe": "Wooden Handaxe",
+
+  "creativetab.starlightmaterials.starlight_materials": "Starlight Materials"
 }

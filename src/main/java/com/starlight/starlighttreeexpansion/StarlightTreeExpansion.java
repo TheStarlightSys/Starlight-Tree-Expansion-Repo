@@ -1,6 +1,7 @@
 package com.starlight.starlighttreeexpansion;
 
 import com.starlight.starlighttreeexpansion.block.ModBlocks;
+import com.starlight.starlighttreeexpansion.creativeModeTabs.ModCreativeModTab;
 import com.starlight.starlighttreeexpansion.entity.ModEntities;
 import com.starlight.starlighttreeexpansion.item.ModItems;
 import org.slf4j.Logger;
@@ -40,11 +41,14 @@ public class StarlightTreeExpansion {
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
-        ModItems.register(modEventBus);
-
         ModBlocks.register(modEventBus);
 
+        ModItems.register(modEventBus);
+
+
         ModEntities.register(modEventBus);
+
+        ModCreativeModTab.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.LOCAL, Config.SPEC);

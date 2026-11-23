@@ -1,6 +1,14 @@
 package com.starlight.starlighttreeexpansion.worldgen;
 
 
+import com.starlight.starlighttreeexpansion.StarlightTreeExpansion;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.neoforged.neoforge.common.world.BiomeModifier;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+
 public class ModBiomeModifiers {
 //
 //
@@ -37,7 +45,7 @@ public class ModBiomeModifiers {
 //
 //    }
 //
-////    private static ResourceKey<BiomeModifier> registerKey(String name){
-////        return ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(StarlightTreeExpansion.MOD_ID, name));
-////    }
+//    private static ResourceKey<BiomeModifier> registerKey(String name){
+//        return ResourceKey.create(NeoForgeRegistries.BIOME_MODIFIER_SERIALIZERS, Identifier.fromNamespaceAndPath(StarlightTreeExpansion.MOD_ID, name));
+//    }
 }

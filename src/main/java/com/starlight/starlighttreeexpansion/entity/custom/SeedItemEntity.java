@@ -1,5 +1,6 @@
 package com.starlight.starlighttreeexpansion.entity.custom;
 
+import com.starlight.starlighttreeexpansion.StarlightTreeExpansion;
 import com.starlight.starlighttreeexpansion.block.ModBlocks;
 import com.starlight.starlighttreeexpansion.item.ModItems;
 import net.minecraft.core.BlockPos;
@@ -38,11 +39,12 @@ public class SeedItemEntity extends ItemEntity
     public SeedItemEntity(EntityType<? extends ItemEntity> pEntityType, Level pLevel)
     {
         super(pEntityType, pLevel);
+        setPickUpDelay(40);
     }
     public SeedItemEntity(Level pLevel, double pPosX, double pPosY, double pPosZ, ItemStack pItemStack)
     {
         super(pLevel, pPosX, pPosY, pPosZ, pItemStack);
-
+        setPickUpDelay(40);
     }
     public SeedItemEntity(
             Level pLevel, double pPosX, double pPosY, double pPosZ, ItemStack pItemStack, double pDeltaX, double pDeltaY, double pDeltaZ
@@ -53,7 +55,7 @@ public class SeedItemEntity extends ItemEntity
         this.setItem(pItemStack);
         setPickUpDelay(40);
 
-        this.lifespan = (pItemStack.getItem() == null ? 6000 : pItemStack.getEntityLifespan(pLevel));
+        this.lifespan = pItemStack.getEntityLifespan(pLevel);
 
         if(getOwner() != null)
         {
@@ -68,41 +70,53 @@ public class SeedItemEntity extends ItemEntity
                     (double)(-f1 * 0.3F + 0.1F + (this.random.nextFloat() - this.random.nextFloat()) * 0.1F),
                     (double)(f4 * f2 * 0.3F) + Math.sin((double)f5) * (double)f6);
         }
-        else
-        {
-            System.out.println("owner null?");
-        }
     }
 
+    @Override
+    public boolean isAlwaysTicking() {
+        return true;
+    }
     @Override
     protected void checkSupportingBlock(boolean pOnGround, @Nullable Vec3 pMovement)
     {
         super.checkSupportingBlock(pOnGround, pMovement);
 
+        StarlightTreeExpansion.LOGGER.atInfo().log("check supporting block");
         //is on ground
         //is ground a dirt/grass block?
         //plant tree seedling/sapling block
         if(onGround())
         {
+            StarlightTreeExpansion.LOGGER.atInfo().log("->on ground");
+
+            StarlightTreeExpansion.LOGGER.atInfo().log("->on ground");
             BlockPos pos = this.getOnPos();
             BlockState state = this.level().getBlockState(pos);
             if((
                     state.is(BlockTags.DIRT)
+                    ||
+                    state.is(BlockTags.GRASS_BLOCKS)
                     ||
                     state.is(Blocks.FARMLAND)
             )
             &&
             this.level().getBlockState(pos.above()).is(Blocks.AIR))
             {
+                StarlightTreeExpansion.LOGGER.atInfo().log("->->on correct blocks");
                 Block b = SEED_SAPLING_MAP.get(this.getItem().getItem());
 
                 if(b != null)
                 {
+                    StarlightTreeExpansion.LOGGER.atInfo().log("->->->seedling mapped correctly");
                     this.level().setBlockAndUpdate(this.getOnPos().above(1), b.defaultBlockState());
 
                     if(this.level() instanceof ServerLevel serverLevel)
                         this.kill(serverLevel);
                 }
+            }
+            else
+            {
+                StarlightTreeExpansion.LOGGER.atInfo().log("->->NOT on correct blocks" + state);
             }
         }
     }
